@@ -49,3 +49,11 @@ bool ASTURifleWeapon::GetTraceData(FVector& TraceStart, FVector& TraceEnd) const
     TraceEnd = TraceStart + ShootDirection * TraceMaxDistant;
     return true;
 }
+
+void ASTURifleWeapon::MakeDamage(const FHitResult& HitResult)
+{
+    const auto EnemyActor = HitResult.GetActor();
+    if(!EnemyActor) return;
+    
+    EnemyActor->TakeDamage(Damage, FDamageEvent(), GetPlayerController(), this);
+}
