@@ -8,6 +8,8 @@
 
 class USkeletalMeshComponent;
 
+DECLARE_MULTICAST_DELEGATE(FOnClipEmptySignature);
+
 USTRUCT(BlueprintType)
 struct FAmmoData
 {
@@ -29,11 +31,16 @@ class SHOOTTHEMUP_API ASTUBaseWeapon : public AActor
 {
 	GENERATED_BODY()
 	
-public:	
+public:
+    FOnClipEmptySignature OnClipEmpty;
+    
 	ASTUBaseWeapon();
 
     virtual void StartFire();
     virtual void StopFire();
+
+    void ChangeClip();
+    bool CanReload() const;
 
 protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
@@ -62,7 +69,6 @@ protected:
     void DecreaseBullet();
     bool IsAmmoEmpty() const;
     bool IsClipEmpty() const;
-    void ChangeClip();
     void LogAmmo();
 
 private:

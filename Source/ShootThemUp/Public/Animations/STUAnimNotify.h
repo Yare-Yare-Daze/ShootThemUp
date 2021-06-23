@@ -13,7 +13,7 @@ class SHOOTTHEMUP_API USTUAnimNotify : public UAnimNotify
 {
 	GENERATED_BODY()
     
-    public:
+public:
     virtual void Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation) override;
     FOnNotifiedSignature OnNotified;
 };
