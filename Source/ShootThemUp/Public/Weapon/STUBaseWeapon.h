@@ -27,6 +27,7 @@ public:
     bool CanReload() const;
 
     FWeaponUIData GetUIData() const {return UIData;}
+    FAmmoData GetAmmoData() const {return CurrentAmmo;}
 
 protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
