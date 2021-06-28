@@ -7,9 +7,6 @@
 #include "STUCoreTypes.h"
 #include "STUPlayerHUDWidget.generated.h"
 
-class USTUWeaponComponent;
-class USTUHealthComponent;
-
 
 UCLASS()
 class SHOOTTHEMUP_API USTUPlayerHUDWidget : public UUserWidget
@@ -33,7 +30,5 @@ public:
     bool IsPlayerSpectating() const;
 
 private:
-    USTUWeaponComponent* GetWeaponComponent() const;
-    USTUHealthComponent* GetHealthComponent() const;
 	
 };
