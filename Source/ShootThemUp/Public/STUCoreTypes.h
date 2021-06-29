@@ -1,8 +1,10 @@
 ﻿#pragma once
 #include "STUCoreTypes.generated.h"
 
+class ASTUBaseWeapon;
+
 //Weapons
-DECLARE_MULTICAST_DELEGATE(FOnClipEmptySignature);
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnClipEmptySignature, ASTUBaseWeapon*);
 //Health
 DECLARE_MULTICAST_DELEGATE(FOnDeathSignature);
 DECLARE_MULTICAST_DELEGATE_OneParam(FOnHealthChangedSignature, float);
