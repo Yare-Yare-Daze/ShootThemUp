@@ -20,5 +20,8 @@ public:
 
 protected:
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="VFX")
-    UNiagaraSystem* Effect;
+    UNiagaraSystem* DefaultEffect;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="VFX")
+    TMap<UPhysicalMaterial*, UNiagaraSystem*> EffectsMap;
 };
