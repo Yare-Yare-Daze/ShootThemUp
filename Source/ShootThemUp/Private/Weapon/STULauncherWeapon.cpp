@@ -31,7 +31,8 @@ void ASTULauncherWeapon::MakeShot()
         Projectile->FinishSpawning(SpawnTransform);
     }
 
-    DecreaseBullet(); 
+    DecreaseBullet();
+    SpawnMuzzleFX();
 }
 
 
