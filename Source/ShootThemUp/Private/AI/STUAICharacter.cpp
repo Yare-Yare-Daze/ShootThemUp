@@ -2,7 +2,7 @@
 
 
 #include "AI/STUAICharacter.h"
-
+#include "AI/STUAIController.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
 ASTUAICharacter::ASTUAICharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
