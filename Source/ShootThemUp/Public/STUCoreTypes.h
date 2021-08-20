@@ -89,8 +89,11 @@ public:
     
 };
 
-class STUCoreTypes
+USTRUCT(BlueprintType)
+struct FGameData
 {
+    GENERATED_USTRUCT_BODY()
 public:
-    
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Game", meta = (ClampMin = "1", ClampMax = "100"))
+    int32 PlayersNum = 2;
 };
