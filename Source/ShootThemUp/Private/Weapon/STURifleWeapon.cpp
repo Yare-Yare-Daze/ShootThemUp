@@ -34,7 +34,7 @@ void ASTURifleWeapon::BeginPlay()
 
 void ASTURifleWeapon::MakeShot()
 {
-    UE_LOG(LogTemp, Display, TEXT("Make shot!"));
+    // UE_LOG(LogTemp, Display, TEXT("Make shot!"));
     if(!GetWorld() || IsAmmoEmpty())
     {
         StopFire();
