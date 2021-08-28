@@ -7,6 +7,7 @@
 #include "GameFramework/Pawn.h"
 #include "Camera/CameraShake.h"
 #include "TimerManager.h"
+#include "STUUtils.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogHealthComponent, All, All)
 
@@ -46,6 +47,7 @@ void USTUHealthComponent::BeginPlay()
 void USTUHealthComponent::OnTakeAnyDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
     AController* InstigatedBy, AActor* DamageCauser)
 {
+    
     if(Damage <= 0.0f || IsDead() || !GetWorld()) return;
     
     SetHealth(Health - Damage);
