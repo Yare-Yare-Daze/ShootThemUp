@@ -103,6 +103,9 @@ public:
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Game", meta = (ClampMin = "3", ClampMax = "300"))
     int32 RoundTime = 10;
 
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Game", meta = (ClampMin = "5", ClampMax = "30"))
+    int32 RespawnTime = 5;
+
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
     FLinearColor DefaultTeamColor = FLinearColor::Red;
 

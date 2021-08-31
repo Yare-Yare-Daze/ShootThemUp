@@ -9,6 +9,8 @@
 
 class AAIController;
 
+constexpr static int32 MinRoundTimeForRespawn = 10;
+
 UCLASS()
 class SHOOTTHEMUP_API ASTUGameModeBase : public AGameModeBase
 {
@@ -24,6 +26,8 @@ public:
     FGameData GetGameData() const {return GameData;}
     int32 GetCurrentRoundNum() const {return CurrentRound;}
     int32 GetRoundSecondsRemaining() const {return RoundCountDown;}
+
+    void RespawnRequest(AController* Controller);
 
 protected:
     UPROPERTY(EditDefaultsOnly, Category="Game")
@@ -52,4 +56,5 @@ private:
     void SetPlayerColor(AController* Controller);
 
     void LogPlayerInfo();
+    void StartRespawn(AController* Controller);
 };
