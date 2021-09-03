@@ -112,3 +112,14 @@ public:
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
     TArray<FLinearColor> TeamColors;
 };
+
+UENUM(BlueprintType)
+enum class ESTUMatchState : uint8
+{
+    WaitingToStart = 0,
+    InProgress,
+    Pause,
+    GameOver
+};
+
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnMatchStateChangedSignatue, ESTUMatchState);

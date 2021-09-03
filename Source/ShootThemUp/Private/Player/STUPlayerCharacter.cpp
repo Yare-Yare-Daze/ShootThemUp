@@ -51,7 +51,7 @@ void ASTUPlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 
 bool ASTUPlayerCharacter::IsRunning() const
 {
-    return Super::IsRunning();
+    return WantsToRun && IsMovingForward && !GetVelocity().IsZero();
 }
 
 void ASTUPlayerCharacter::MoveForward(float Amount)
