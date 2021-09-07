@@ -6,6 +6,7 @@
 #include "Blueprint/UserWidget.h"
 #include "STUCoreTypes.h"
 #include "Components/VerticalBox.h"
+#include "Components/Button.h"
 #include "STUGameOverWidget.generated.h"
 
 UCLASS()
@@ -13,17 +14,24 @@ class SHOOTTHEMUP_API USTUGameOverWidget : public UUserWidget
 {
 	GENERATED_BODY()
 public:
-    virtual bool Initialize() override;
+
 
 protected:
     UPROPERTY(meta = (BindWidget))
     UVerticalBox* PlayerStatBox;
 
+    UPROPERTY(meta = (BindWidget))
+    UButton* ResetLevelButton;
+
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="UI")
     TSubclassOf<UUserWidget> PlayerStatRowWidgetClass;
+
+    virtual void NativeOnInitialized() override;
     
 private:
     void OnMatchStateChanged(ESTUMatchState State);
     void UpdatePlayerStat();
-    
+
+    UFUNCTION()
+    void OnResetLevel();
 };
