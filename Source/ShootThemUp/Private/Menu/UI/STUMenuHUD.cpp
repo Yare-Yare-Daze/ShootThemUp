@@ -6,7 +6,7 @@
 void ASTUMenuHUD::BeginPlay()
 {
     Super::BeginPlay();
-
+    
     if(MenuWidgetClass)
     {
         const auto MenuWidget = CreateWidget<UUserWidget>(GetWorld(), MenuWidgetClass);
