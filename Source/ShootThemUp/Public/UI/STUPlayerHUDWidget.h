@@ -6,11 +6,12 @@
 #include "Blueprint/UserWidget.h"
 #include "STUCoreTypes.h"
 #include "Components/ProgressBar.h"
+#include "STUBaseWidget.h"
 #include "STUPlayerHUDWidget.generated.h"
 
 
 UCLASS()
-class SHOOTTHEMUP_API USTUPlayerHUDWidget : public UUserWidget
+class SHOOTTHEMUP_API USTUPlayerHUDWidget : public USTUBaseWidget
 {
 	GENERATED_BODY()
 
@@ -51,6 +52,9 @@ protected:
 
     UPROPERTY(meta = (BindWidget))
     UProgressBar* HealthProgressBar;
+
+    UPROPERTY(meta = (BindWidgetAnim), Transient)
+    UWidgetAnimation* DamageAnimation;
     
     virtual void NativeOnInitialized() override;
     

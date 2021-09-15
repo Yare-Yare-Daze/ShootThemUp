@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
 #include "STUCoreTypes.h"
+#include "STUBaseWidget.h"
 #include "STUGameHUD.generated.h"
 
 UCLASS()
@@ -29,10 +30,10 @@ protected:
 
 private:
     UPROPERTY()
-    TMap<ESTUMatchState, UUserWidget*> GameWidgets;
+    TMap<ESTUMatchState, USTUBaseWidget*> GameWidgets;
 
     UPROPERTY()
-    UUserWidget* CurrentWidget = nullptr;
+    USTUBaseWidget* CurrentWidget = nullptr;
     
     void DrawCrossHair();
     void OnMatchStateChanged(ESTUMatchState State);
